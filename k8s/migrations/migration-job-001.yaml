@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: migration-001
+spec:
+  restartPolicy: Never
+  containers:
+    - name: migration-2
+      image: alpine:latest
+      command: ["/bin/sh","-c"]
+      args:
+        - apk --update add postgresql-client; 
+          until pg_isready --host=postgres; do sleep 1; done;
+          psql postgres://postgres:postgres@postgres:5432/postgres $(MIGRATION)
+      env:
+        - name: MIGRATION
+          value: |
+            << SQL
+              create table names();
+              select 1;
+              select 2;
+            SQL

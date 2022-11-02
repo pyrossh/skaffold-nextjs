@@ -9,16 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "libpq": "^1.8.12",
     "next": "13.0.0",
+    "next-swagger-doc": "^0.3.6",
+    "openapi-explorer": "^0.10.437",
+    "postgres": "^3.3.1",
+    "prexit": "^1.0.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "swagger-ui-react": "^4.15.2"
   },
   "devDependencies": {
     "@types/node": "18.11.5",
     "@types/react": "18.0.23",
     "@types/react-dom": "18.0.7",
-    "eslint": "8.26.0",
+    "eslint": "^8.26.0",
     "eslint-config-next": "13.0.0",
+    "eslint-plugin-sql": "^2.2.2",
     "typescript": "4.8.4"
   }
 }

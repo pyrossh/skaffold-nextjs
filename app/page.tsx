@@ -1,43 +1,31 @@
 import Image from 'next/image'
+import Todo from './components/Todo';
+import sql from '../utils/pool';
 import styles from './page.module.css'
 
-export default function Home() {
+export default Home;
+
+async function Home() {
+  const values = await sql`select * from todos`;
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js 13!</a>
+          Welcome to <a href="https://nextjs.org">Next.js 26!</a>
+          asdas
         </h1>
 
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>app/page.tsx</code>
         </p>
-
-        <div className={styles.grid}>
-          <a href="https://beta.nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js 13</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates/next.js/app-directory?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>Deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
+        {values.map((item) => (
+          <div className={styles.card} key={item.id}>
+            <p>{item.text}</p>
+            <p>{item.created_at.toISOString()}</p>
+            <Todo text={item.text} />
+          </div>
+        ))}
       </main>
 
       <footer className={styles.footer}>
