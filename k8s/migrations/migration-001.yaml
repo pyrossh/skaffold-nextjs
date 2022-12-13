@@ -5,7 +5,7 @@ metadata:
 spec:
   restartPolicy: Never
   containers:
-    - name: migration-2
+    - name: migration-001
       image: alpine:latest
       command: ["/bin/sh","-c"]
       args:
@@ -16,7 +16,11 @@ spec:
         - name: MIGRATION
           value: |
             << SQL
-              create table names();
-              select 1;
-              select 2;
+              CREATE TABLE todos (
+                id TEXT NOT NULL PRIMARY KEY,
+                text TEXT NOT NULL,
+                completed BOOLEAN NOT NULL,
+                created_at TIMESTAMP NOT NULL,
+                updated_at TIMESTAMP NOT NULL
+              );
             SQL
