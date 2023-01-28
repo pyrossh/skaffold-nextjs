@@ -1,21 +1,29 @@
 "use client";
+import styles from "../page.module.css";
 
 import { useRouter } from 'next/navigation';
 
 async function update(refresh) {
-  await fetch(`/api/hello`, {
+  await fetch(`/api/todos`, {
     method: 'POST',
-    body: JSON.stringify({}),
+    body: JSON.stringify({
+      id: "123",
+      text: "123",
+      completed: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }),
   });
   refresh();
 }
 
 
-export default function Todo({ text } ) {
+export default function Todo({ text }) {
   const router = useRouter();
   return (
-    <li onClick={() => update(router.refresh)}>
-      {text}
+    <li className={styles.card}>
+      <p>Todo: {text}</p>
+      <button onClick={() => update(router.refresh)}>Create New</button>
     </li>
   );
 }

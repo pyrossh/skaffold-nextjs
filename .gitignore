@@ -34,9 +34,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-.vscode
-
-
-# Ignore DevSpace cache and log folder
-.devspace/
+.kpt-pipeline

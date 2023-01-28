@@ -10,22 +10,24 @@
     "format": "prettier --write pages"
   },
   "dependencies": {
-    "@next-auth/prisma-adapter": "^1.0.5",
-    "@prisma/client": "^4.8.1",
+    "@minbao/promise-utils": "^2.0.4",
+    "@pgtyped/runtime": "^2.0.0-alpha.1",
     "next": "13.0.0",
     "next-auth": "^4.18.8",
-    "next-runtime": "^2.4.1",
+    "pg": "^8.9.0",
+    "pg-pool": "^3.5.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-pro-sidebar": "^1.0.0"
   },
   "devDependencies": {
+    "@pgtyped/cli": "^2.0.0-alpha.1",
     "@types/node": "18.11.5",
     "@types/react": "18.0.23",
     "@types/react-dom": "18.0.7",
     "eslint": "^8.26.0",
     "eslint-config-next": "13.0.0",
     "prettier": "^2.8.2",
-    "prisma": "^4.8.1",
-    "typescript": "4.8.4"
+    "typescript": "^4.8.4"
   }
 }

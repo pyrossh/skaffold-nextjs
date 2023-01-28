@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dracula-theme.theme-dracula",
+    "bierner.markdown-mermaid",
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-pg",
+  ],
+  "unwantedRecommendations": []
+}

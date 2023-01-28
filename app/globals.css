@@ -14,29 +14,3 @@ a {
 * {
   box-sizing: border-box;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
-
-openapi-explorer {
-  --purple: #6f42c1;
-  --red: #dc3545;
-  --orange: #fd7e14;
-  --yellow: #0000ff; 
-  --green: #28a745;
-  --blue: #38b3f9;
-  --gray: #465865;
-  --pink: #e83e8c;
-  --white: #fff;
-}
-
-openapi-explorer::part(section-navbar) {
-  background: linear-gradient(90deg, var(--nav-bg-color), black);
-}

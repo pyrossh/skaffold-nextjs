@@ -1,0 +1,14 @@
+{
+  "transforms": [
+    {
+      "mode": "sql",
+      "include": "**/*.sql",
+      "exclude": "**/auth.sql",
+      "emitTemplate": "db/{{name}}.queries.ts"
+    }
+  ],
+  "srcDir": "./schema/",
+  "failOnError": true,
+  "camelCaseColumnNames": false,
+  "dbUrl": "postgres://postgres:postgres@127.0.0.1:5433/postgres"
+}
